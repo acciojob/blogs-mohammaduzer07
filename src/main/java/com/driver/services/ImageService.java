@@ -21,7 +21,7 @@ public class ImageService {
         Blog blog = blogRepository2.findById(blogId).get();
         Image image = new Image();
         image.setDescription(description);
-        image.setDimension(dimensions);
+        image.setDimensions(dimensions);
         image.setBlog(blog);
 
         List<Image> imageList = blog.getImageList();
@@ -41,7 +41,7 @@ public class ImageService {
         int count = 0;
         String[] dimArray = screenDimensions.split("X");
         Image image = imageRepository2.findById(id).get();
-        String dimensionOfImage = image.getDimension();
+        String dimensionOfImage = image.getDimensions();
         String[] imgArray = dimensionOfImage.split("X");
         int imgX = Integer.parseInt(imgArray[0]);
         int imgY = Integer.parseInt(imgArray[1]);

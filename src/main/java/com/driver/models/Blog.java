@@ -13,12 +13,12 @@ public class Blog{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int blogId;
+    private int id;
     private String title;
     private String content;
     @CreationTimestamp
     private Date pubDate;
-    @OneToMany
+    @ManyToOne
     @JoinColumn
     private User user;
     @OneToMany(mappedBy = "blog", cascade = CascadeType.ALL)
@@ -36,12 +36,12 @@ public class Blog{
         this.user = user;
     }
 
-    public int getBlogId() {
-        return blogId;
+    public int getId() {
+        return id;
     }
 
-    public void setBlogId(int blogId) {
-        this.blogId = blogId;
+    public void setId(int blogId) {
+        this.id = id;
     }
 
     public String getTitle() {
